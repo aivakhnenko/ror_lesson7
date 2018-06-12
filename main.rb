@@ -14,8 +14,8 @@ class Main
     @trains   = []
     @show_info_for_object = {}
     @show_info_for_object[:station] = Proc.new { |station, index| puts "ID #{index}: #{station}" }
-    @show_info_for_object[:route]   = Proc.new { |route,   index| puts "ID #{index}: #{route}" }
-    @show_info_for_object[:train]   = Proc.new { |train,   index| puts "ID #{index}: #{train}" }
+    @show_info_for_object[:route]   = Proc.new { |route,   index| puts "ID #{index}: #{route}"   }
+    @show_info_for_object[:train]   = Proc.new { |train,   index| puts "ID #{index}: #{train}"   }
     @show_info_for_object[:railcar] = Proc.new { |railcar, index| puts "ID #{index}: #{railcar}" }
   end
 

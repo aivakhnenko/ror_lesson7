@@ -26,7 +26,7 @@ class Railcar
   protected
 
   def validate!
-    raise "Railcar has to have type" if type.nil?
+    raise "Railcar has to have type" unless type
     true
   end
 end

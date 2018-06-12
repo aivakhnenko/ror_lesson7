@@ -12,18 +12,14 @@ class PassengerRailcar < Railcar
   end
 
   def to_s
-    "#{type.capitalize} railcar number #{number}, #{number_of_free_seats} free seats, #{number_of_occupied_seats} occupied seats"
+    "#{type.capitalize} railcar number #{number}, #{seats_free} free seats, #{seats_occupied} occupied seats"
   end
 
   def occupy_seat
-    self.seats_occupied += 1 if number_of_free_seats.positive?
+    self.seats_occupied += 1 if seats_free.positive?
   end
 
-  def number_of_occupied_seats
-    seats_occupied
-  end
-
-  def number_of_free_seats
+  def seats_free
     seats_total - seats_occupied
   end
 

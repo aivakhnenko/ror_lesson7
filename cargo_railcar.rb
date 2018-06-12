@@ -12,18 +12,14 @@ class CargoRailcar < Railcar
   end
 
   def to_s
-    "#{type.capitalize} railcar number #{number}, #{volume_of_free_capacity} free capacity, #{volume_of_used_capacity} used capacity"
+    "#{type.capitalize} railcar number #{number}, #{capacity_free} free capacity, #{capacity_used} used capacity"
   end
 
   def use_capacity(capacity_to_use)
-    self.capacity_used += capacity_to_use if capacity_to_use <= volume_of_free_capacity
+    self.capacity_used += capacity_to_use if capacity_to_use <= capacity_free
   end
 
-  def volume_of_used_capacity
-    capacity_used
-  end
-
-  def volume_of_free_capacity
+  def capacity_free
     capacity_total - capacity_used
   end
 
